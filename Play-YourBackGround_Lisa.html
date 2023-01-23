@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, div, button {
+text-align : center;
+}
+#jeu {
+display : inline-block ;
+padding-left : 5% ;
+padding-right : 5% ;
+border : 2px solid ;
+text-align : center ;
+}
+</style>
+<meta charset = 'utf-8'>
+<title> Sélecteur de couleur </title>
+</head>
+<body>
+<h1> Choose your background color </h1>
+<table id = 'jeu'>
+<tr><td> RED </td><td><input type = "text" id = 'red'></input></td>
+<tr><td> GREEN </td><td><input type = "text" id = 'green'></input></td>
+<tr><td> BLUE </td><td><input type = "text" id = 'blue'></input></td>
+</table>
+<br>
+<button onclick = 'colorbackground()'> Press </button>
+</body>
+<script>
+function colorbackground() {
+var limite = 255
+var r = document.getElementById('red').value
+var g = document.getElementById('green').value
+var b = document.getElementById('blue').value
+if (r > limite || g > limite || b > limite) {
+alert("La valeur doit être comprise entre 0 et 255  :|");
+}
+return document.getElementsByTagName('body')[0].style = 'background : rgb('+r+','+g+','+b+')'
+}
+</script>
+</html>
